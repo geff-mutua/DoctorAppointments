@@ -1,4 +1,41 @@
-<x-guest-layout>
+@extends('layouts.app')
+@section('content')
+    <h5>Create account</h5>
+
+    <!-- form -->
+    <form method="POST" action="{{ route('register') }}">
+        @csrf
+        <div class="form-group">
+            <input id="name" class="form-control" type="text" placeholder="Full Name" name="name" :value="old('name')" required autofocus />
+        </div>
+        <div class="form-group">
+            <input id="email" class="form-control" placeholder="Email Address" type="email" name="email" :value="old('email')" required />
+        </div>
+        <div class="form-group">
+            <select name="role" required id="" class="form-control">
+                <option value="">--Select Role--</option>
+                <option value="Patient">Patient</option>
+                <option value="Doctor">Doctor</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input id="password" placeholder="Password" class="form-control" type="password" name="password" required autocomplete="new-password" />
+        </div>
+        <div class="form-group">
+
+            <input id="password_confirmation" placeholder="Confirm Password" class="form-control" type="password"  name="password_confirmation" required />
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Register</button>
+        <hr>
+        <p class="text-muted">Already have an account?</p>
+        <a href="{{ route('login') }}" class="btn btn-outline-light btn-sm">Sign in!</a>
+    </form>
+@endsection
+
+
+
+
+{{-- <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
@@ -56,4 +93,4 @@
             </div>
         </form>
     </x-auth-card>
-</x-guest-layout>
+</x-guest-layout> --}}

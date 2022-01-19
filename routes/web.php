@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Livewire\Patient\Home;
+use App\Http\Livewire\Patient\Notes;
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\Patient\Insurance;
+use App\Http\Livewire\Patient\Appointment;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,12 +17,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/',Home::class)->name('patient.home');
+    Route::get('/patient/insurance',Insurance::class)->name('patient.insurance');
+    Route::get('/patient/notes',Notes::class)->name('patient.notes');
+    Route::get('/patient/appointment',Appointment::class)->name('patient.appointment');
 });
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
