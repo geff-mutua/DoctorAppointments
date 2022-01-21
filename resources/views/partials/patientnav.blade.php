@@ -1,7 +1,7 @@
 <div class="navigation-menu-body">
     <ul>
         <li>
-            <a href={{route('patient.home')}}>
+            <a class="{{Request::segment(1)=='' ? 'active' : null}}" href={{route('patient.home')}}>
                 <span class="nav-link-icon">
                     <i data-feather="pie-chart"></i>
                 </span>
@@ -44,16 +44,13 @@
             </a>
             <ul>
                 <li>
-                    <a href="orders.html">Medical History</a>
+                    <a class="{{Request::segment(3)=='medical' ? 'active' : null}}" href="{{route('patient.history.medical')}}">Medical History</a>
                 </li>
                 <li>
-                    <a href="products.html">Family History</a>
+                    <a class="{{Request::segment(3)=='family' ? 'active' : null}}"  href="{{route('patient.history.family')}}">Family History</a>
                 </li>
                 <li>
-                    <a href="product-detail.html">Medication History</a>
-                </li>
-                <li>
-                    <a href="product-detail.html">Alergies History</a>
+                    <a class="{{Request::segment(3)=='allergy' ? 'active' : null}}" href="{{route('patient.history.allergy')}}">Allergies History</a>
                 </li>
             </ul>
         </li>
@@ -64,15 +61,15 @@
                 </span>
                 <span>Doctor Reviews</span>
             </a>
-            <ul style="display: block">
+            <ul >
                 <li>
-                    <a href="basic-forms.html">Vital Signs</a>
+                    <a class="{{Request::segment(3)=='vitals' ? 'active' : null}}" href="{{route('patient.doctor.vitals')}}">Vital Signs</a>
                 </li>
                 <li>
-                    <a href="custom-forms.html">Physical Exams</a>
+                    <a class="{{Request::segment(3)=='exam' ? 'active' : null}}" href="{{route('patient.doctor.exam')}}">Physical Exams</a>
                 </li>
                 <li>
-                    <a href="advanced-forms.html">Recommendations</a>
+                    <a class="{{Request::segment(3)=='recomendations' ? 'active' : null}}" href="{{route('patient.doctor.recomendations')}}">Recommendations</a>
                 </li>
                 
             </ul>

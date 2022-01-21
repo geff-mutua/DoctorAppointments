@@ -101,10 +101,12 @@
                                 <div class="mb-3 small text-center text-muted">@bonygidden</div>
                                 <a href="#" class="btn btn-outline-light btn-rounded">Manage Your Account</a>
                             </div>
-                            <div class="list-group">
-                                <a href="profile.html" class="list-group-item">View Profile</a>
-                                <a href="" class="list-group-item text-danger"
-                                   data-sidebar-target="#settings">Sign Out!</a>
+                            <div class="list-group text-center">
+                                <a href="#" class="list-group-item">View Profile</a>
+                                <form action="{{ route('logout') }}" method="POST">
+                                    @csrf
+                                    <button type="submit" class="btn btn-default"><span class="fa fa-power-off"></span>Logout</button>
+                                </form>
                             </div>
                           
                         </div>
