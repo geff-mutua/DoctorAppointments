@@ -28,14 +28,13 @@
     <!-- logo -->
     <div id="logo">
         
-        <img src="{{asset('assets/media/image/dark-logo.png')}}" alt="image">
+        <img src="{{asset('assets/media/image/dark-logo.png')}}"  alt="image">
     </div>
     <!-- ./ logo -->
 
     <!-- form -->
    @yield('content')
     <!-- ./ form -->
-
 
 </div>
 

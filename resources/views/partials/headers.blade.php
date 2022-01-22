@@ -102,7 +102,7 @@
                                 <a href="#" class="btn btn-outline-light btn-rounded">Manage Your Account</a>
                             </div>
                             <div class="list-group text-center">
-                                <a href="#" class="list-group-item">View Profile</a>
+                                <a href="{{route('profile')}}" class="list-group-item">View Profile</a>
                                 <form action="{{ route('logout') }}" method="POST">
                                     @csrf
                                     <button type="submit" class="btn btn-default"><span class="fa fa-power-off"></span>Logout</button>

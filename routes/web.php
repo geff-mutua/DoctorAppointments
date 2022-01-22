@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Livewire\Profile;
 use App\Http\Livewire\Patient\Home;
 use App\Http\Livewire\Patient\Notes;
 use App\Http\Livewire\Doctor\Patient;
@@ -43,6 +44,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/doctor/notes',DoctorNote::class)->name('doctor.notes');
     Route::get('/doctor/appointment',DoctorAppointment::class)->name('doctor.appointment');
     Route::get('/doctor/patients',Patient::class)->name('doctor.patients');
+
+    Route::get('/profile',Profile::class)->name('profile');
 });
 
 require __DIR__.'/auth.php';
