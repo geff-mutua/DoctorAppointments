@@ -47,11 +47,13 @@
                                     <div data-toggle="modal" data-target="#allergy" class="badge badge-primary" class="badge badge-success">Allergies</div>
                                     
                                     <div data-toggle="modal" data-target="#recommend" class="badge badge-danger">Recomends</div>
+                                    <div data-toggle="modal" data-target="#review" class="badge badge-secondary">Reviews</div>
                                     {{-- <div class="badge badge-warning">History</div> --}}
                                 </td>
                                 @include('livewire/doctor/includes/prescriptions')
                                 @include('livewire/doctor/includes/allergy')
                                 @include('livewire/doctor/includes/recommend')
+                                @include('livewire/doctor/includes/reviews')
                             </tr>
                         @empty
                             <tr class="text-center">

@@ -19,7 +19,7 @@
                 <div class="modal-body">
                     <div class="row">
                       <div class="form-group col-md-12">
-                          <label for="">Tenant Name</label>
+                          <label for="">Patient Name</label>
                           <select wire:model="patient" class="form-control" required id="">
                               <option value="">--Select Tenant--</option>
                               <option value="{{$value->id}}">{{$value->name}}</option>

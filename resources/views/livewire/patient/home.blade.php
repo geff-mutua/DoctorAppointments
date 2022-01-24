@@ -8,11 +8,7 @@
             <div id="dashboard-daterangepicker" class="btn btn-outline-light">
                 <span></span>
             </div>
-            <a href="#" class="btn btn-primary ml-0 ml-md-2 mt-2 mt-md-0 dropdown-toggle" data-toggle="dropdown">Actions</a>
-            <div class="dropdown-menu dropdown-menu-right">
-                <a href="#" class="dropdown-item">Download</a>
-                <a href="#" class="dropdown-item">Print</a>
-            </div>
+           
         </div>
     </div>
     <div class="row">
@@ -37,9 +33,9 @@
                             <div class="list-group-item d-flex justify-content-between align-items-center px-0">
                                 <div>
                                     <h5>Last Active Session</h5>
-                                    <div>{{auth()->user()->updated_at->diffForHumans()}}</div>
+                                    <p>{{\Carbon\Carbon::now()->diffForHumans()}}</p>
                                 </div>
-                                <h3 class="text-success mb-0">{{auth()->user()->updated_at}}</h3>
+                                <h3 class="text-success mb-0">{{\Carbon\Carbon::now()}}</h3>
                             </div>
                             <div class="list-group-item d-flex justify-content-between align-items-center px-0">
                                 <div>
@@ -47,7 +43,7 @@
                                     <div>Outstanding Bill</div>
                                 </div>
                                 <div>
-                                    <h3 class="text-danger mb-0">- $58,90</h3>
+                                    <h3 class="text-danger mb-0">- N/A</h3>
                                 </div>
                             </div>
                             <div class="list-group-item d-flex justify-content-between align-items-center px-0">
@@ -56,14 +52,12 @@
                                     <div>Application for appointments</div>
                                 </div>
                                 <div>
-                                    <h3 class="text-info mb-0">65</h3>
+                                    <h3 class="text-info mb-0">{{$appointments}}</h3>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="mt-3">
-                        <a href="#" class="btn btn-info">Report Detail</a>
-                    </div>
+                   
                 </div>
             </div>
         </div>
@@ -72,7 +66,7 @@
                 <div class="col-md-6">
                     <div class="card">
                         <div class="card-body">
-                            <h6 class="card-title">Doctor Reviews</h6>
+                            <h6 class="card-title">Doctor Recomendations</h6>
                             <div class="d-flex align-items-center mb-3">
                                 <div>
                                     <div class="avatar">
@@ -81,7 +75,7 @@
                                         </span>
                                     </div>
                                 </div>
-                                <div class="font-weight-bold ml-1 font-size-30 ml-3">5</div>
+                                <div class="font-weight-bold ml-1 font-size-30 ml-3">{{$recommends}}</div>
                             </div>
                             <p class="mb-0"><a href="#" class="link-1">See comments</a> Responce from doctors.</p>
                         </div>
@@ -99,7 +93,7 @@
                                         </span>
                                     </div>
                                 </div>
-                                <div class="font-weight-bold ml-1 font-size-30 ml-3">1</div>
+                                <div class="font-weight-bold ml-1 font-size-30 ml-3">{{$appointments}}</div>
                             </div>
                             <p class="mb-0"><a class="link-1" href="#">See all</a> Dr Alfred.</p>
                             <span>Sergical Operation</span>
@@ -118,7 +112,7 @@
                                         </span>
                                     </div>
                                 </div>
-                                <div class="font-weight-bold ml-1 font-size-30 ml-3">2</div>
+                                <div class="font-weight-bold ml-1 font-size-30 ml-3">{{$allergies}}</div>
                             </div>
                             <p class="mb-0"><a class="link-1" href="#">See All</a> Allergies recorded.</p>
                         </div>
@@ -136,7 +130,7 @@
                                         </span>
                                     </div>
                                 </div>
-                                <div class="font-weight-bold ml-1 font-size-30 ml-3">3</div>
+                                <div class="font-weight-bold ml-1 font-size-30 ml-3">{{$prescriptions}}</div>
                             </div>
                             <p class="mb-0"><a class="link-1" href="#">See All</a> Doctors Prescriptions recommendations.</p>
                         </div>

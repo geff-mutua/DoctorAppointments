@@ -3,7 +3,7 @@
     <div class="page-header d-md-flex justify-content-between">
         <div>
             <h3>My Allergies</h3>
-            <p class="text-muted">List of the medication received.</p>
+            <p class="text-muted">Recorded Allergies from Doctor.</p>
         </div>
         <div class="mt-3 mt-md-0">
             <div id="dashboard-daterangepicker" class="btn btn-outline-light">
@@ -37,18 +37,10 @@
                         @forelse ($allergy as $value)
                             <tr>
                                 <td>
-                                    {{ $value->date_applied }}
+                                    {{ $value->created_at }}
                                 </td>
-                                <td>{{ $value->insurance_cover }}</td>
-                                <td>{{ $value->payment_method }}</td>
-                                <td>
-                                    <span class="badge bg-secondary-bright text-secondary">{{ $value->status }}</span>
-                                </td>
-                                <td>{{ $value->deposit_amount }}</td>
-                                <td class="text-right">
-                                    {{ $value->period }}
-                                </td>
-                                <td><span class="fa fa-trash"></span> Remove</td>
+                                <td>{{ $value->description }}</td>
+                                
                             </tr>
                         @empty
                             <tr class="text-center">

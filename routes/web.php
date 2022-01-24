@@ -28,7 +28,7 @@ use App\Http\Livewire\Patient\History\MedicalHistory;
 |
 */
 
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'auth','account'], function () {
     Route::get('/',Home::class)->name('patient.home');
     Route::get('/patient/insurance',Insurance::class)->name('patient.insurance');
     Route::get('/patient/notes',Notes::class)->name('patient.notes');

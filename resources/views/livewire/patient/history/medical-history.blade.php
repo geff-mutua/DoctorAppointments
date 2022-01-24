@@ -21,17 +21,14 @@
     </div>
     <div class="card">
         <div class="card-body">
-            <h6 class="card-title">Medications Orders</h6>
+            <h6 class="card-title">Medications History</h6>
             <div class="table-responsive">
                 <table id="recent-orders" class="table">
                     <thead>
                         <tr>
                             <th>Date Applied</th>
                             <th>Medication</th>
-                            <th>Diagnosis</th>
-                            <th>Status</th>
-                            <th>Period</th>
-                            <th class="text-right">Action</th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -39,22 +36,14 @@
                         @forelse ($medical as $value)
                             <tr>
                                 <td>
-                                    {{ $value->date_applied }}
+                                    {{ $value->created_at }}
                                 </td>
-                                <td>{{ $value->insurance_cover }}</td>
-                                <td>{{ $value->payment_method }}</td>
-                                <td>
-                                    <span class="badge bg-secondary-bright text-secondary">{{ $value->status }}</span>
-                                </td>
-                                <td>{{ $value->deposit_amount }}</td>
-                                <td class="text-right">
-                                    {{ $value->period }}
-                                </td>
-                                <td><span class="fa fa-trash"></span> Remove</td>
+                                <td>{{ $value->description }}</td>
+                               
                             </tr>
                         @empty
                             <tr class="text-center">
-                                <td colspan="">No Record Found</td>
+                                <td colspan="2">No Record Found</td>
                             </tr>
 
                         @endforelse

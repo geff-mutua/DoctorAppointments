@@ -11,13 +11,7 @@
         
         </div>
     </div>
-    <div class="row">
-        @if(count($exam)>0)
-        <div class="alert alert-warning" role="alert">
-            You dont have any running exams 
-        </div>
-        @endif
-    </div>
+
     <div class="card">
         <div class="card-body">
             <h6 class="card-title">Recent Orders</h6>
@@ -26,9 +20,8 @@
                     <thead>
                         <tr>
                             <th>Date Applied</th>
-                            <th>Exam Type</th>
-                            <th>Description</th>
-                            
+                            <th>Comment</th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -36,22 +29,14 @@
                         @forelse ($exam as $value)
                             <tr>
                                 <td>
-                                    {{ $value->date_applied }}
+                                    {{ $value->created_at }}
                                 </td>
-                                <td>{{ $value->insurance_cover }}</td>
-                                <td>{{ $value->payment_method }}</td>
-                                <td>
-                                    <span class="badge bg-secondary-bright text-secondary">{{ $value->status }}</span>
-                                </td>
-                                <td>{{ $value->deposit_amount }}</td>
-                                <td class="text-right">
-                                    {{ $value->period }}
-                                </td>
-                                <td><span class="fa fa-trash"></span> Remove</td>
+                                <td>{{$value->comment}}</td>
+                             
                             </tr>
                         @empty
                             <tr class="text-center">
-                                <td colspan="">No Record Found</td>
+                                <td colspan="2">No Record Found</td>
                             </tr>
 
                         @endforelse

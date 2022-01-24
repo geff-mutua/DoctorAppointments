@@ -2,11 +2,13 @@
 @section( 'content')
 <form method="POST" action="{{ route('login') }}">
     @csrf
-    <div class="form-group">
-        <input id="email" class="form-control" placeholder="Email Address" type="email" name="email" :value="old('email')" required autofocus />
+    <div class="form-group text-left">
+        <label for="">Email Address</label>
+        <input id="email" class="form-control" placeholder="Enter Email Address" type="email" name="email" :value="old('email')" required autofocus />
         @error('email') <span class="text-danger">{{ $message }}</span> @enderror
     </div>
-    <div class="form-group">
+    <div class="form-group text-left">
+        <label for="">Password</label>
         <input id="password" class="form-control"type="password" placeholder="Password" name="password" required autocomplete="current-password" />
     </div>
     <div class="form-group d-flex justify-content-between">

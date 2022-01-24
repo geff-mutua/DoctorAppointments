@@ -11,13 +11,7 @@
 
         </div>
     </div>
-    <div class="row">
-        @if(count($recommendations)>0)
-        <div class="alert alert-warning" role="alert">
-           You dont have any running recommendations registered
-        </div>
-        @endif
-    </div>
+
     <div class="card">
         <div class="card-body">
             <h6 class="card-title">Recommendations</h6>
@@ -26,7 +20,7 @@
                     <thead>
                         <tr>
                             <th>Date</th>
-                            <th>Insurance type</th>
+                            <th>Description</th>
                             
                         </tr>
                     </thead>
@@ -35,9 +29,9 @@
                         @forelse ($recommendations as $value)
                             <tr>
                                 <td>
-                                    {{ $value->date_applied }}
+                                    {{ $value->created_at }}
                                 </td>
-                                <td>{{ $value->insurance_cover }}</td>
+                                <td>{{ $value->description }}</td>
                                 
                             </tr>
                         @empty
